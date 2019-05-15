@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+         
+		<title> Login Screen </title>
+		<style>
+			.d1 {
+					position: relative;
+					background-color: lightgreen;
+					border: 6px solid yellow;
+					padding: 30px;
+					<!--font-family  -->
+					font-family: "Lucida Console", Monaco, monospace;
+			    }
+				<!--Center Images-->
+		</style>
+</head>
+<body>   
+         
+         <!--Url for job search image-->
+<img src="https://network.napco.com/target-marketing/wp-content/uploads/sites/3/2016/01/Job_Search.jpeg" style="width:20%;">
+<img src="https://network.napco.com/target-marketing/wp-content/uploads/sites/3/2016/01/Job_Search.jpeg" style="width:20%;">
+<img src="https://network.napco.com/target-marketing/wp-content/uploads/sites/3/2016/01/Job_Search.jpeg" style="width:20%;">
+<img src="https://network.napco.com/target-marketing/wp-content/uploads/sites/3/2016/01/Job_Search.jpeg" style="width:20%;">
+
+		
+</body>
+   <body bgcolor="#E6E6FA">
+ 		<div class="d1">
+		<h1 align="center"> Job Market in ireland</h1>
+		</div>
+			<form class="d1" id="myForm" >
+					<b>User ID  : </b> 
+					<input type="email"  placeholder="Type your email" id="userName" required size="35"> <br> <br >
+					<b>Password: </b> 
+					<input type="password" placeholder="Type Password" id="Password" maxlength="4" size="25"/>  <br> <br>
+					
+					<button onclick ="validatepwd()" button type="Button" style="background-color: yellow; height: 35px; width: 150px"> <b> Submit </button>  <b> 
+					
+					<button onclick="forgotPassword()"> Forgot Password </button>
+					
+					
+					
+			</form>
+ 
+    </body>
+<script>
+<!--  validate the user id and password -->
+function validatepwd() {
+ if((document.getElementById("userName").value != "") && (document.getElementById("Password").value =="test"))
+  {
+	alert("login Successfully");
+  }
+  else 
+	{
+		alert("Enter valid Password");
+	}
+}	
+<!-- Show the default password-->
+function forgotPassword() {
+	if((document.getElementById("Password").value != "") && (document.getElementById("Password").value !="test"))
+		{
+		  alert("Enter the correct password. The temporary password is 'test' ");
+		}
+		else 
+			{
+				alert("The temporary password is 'test' ");
+			}
+}	
+</script>
+
+
+</html>
