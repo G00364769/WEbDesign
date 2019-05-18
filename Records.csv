@@ -1,0 +1,61 @@
+Age,Location,Gender,Job,Year
+22,Dublin,Male,Research,2018
+18,Dublin,Female,Administrator,2017
+39,Dublin,Female,Administrator,2016
+34,Dublin,Female,Doctors,2016
+35,Dublin,Male,IT Engineer,2016
+45,Dublin,Male,IT Engineer,2017
+20,Dublin,Female,IT Engineer,2017
+48,Dublin,Male,DataScientist,2017
+41,Dublin,Male,Research,2018
+18,Cork,Female,Administrator,2018
+29,Cork,Male,Administrator,2018
+43,Cork,Female,DataScientist,2016
+19,Cork,Female,DataScientist,2016
+29,Cork,Female,Doctors,2018
+20,Cork,Male,Doctors,2018
+22,Cork,Female,Administrator,2018
+30,Leinster,Female,Doctors,2016
+42,Leinster,Female,IT Engineer,2016
+50,Leinster,Female,DataScientist,2016
+28,Leinster,Male,Doctors,2017
+27,Leinster,Female,Research,2016
+22,Leinster,Female,Administrator,2017
+46,Leinster,Male,DataScientist,2018
+27,Limerick,Male,DataScientist,2018
+25,Limerick,Female,Research,2018
+38,Limerick,Female,Research,2016
+50,Limerick,Male,Doctors,2016
+21,Limerick,Male,IT Engineer,2017
+43,Limerick,Female,Research,2018
+47,Limerick,Female,Doctors,2018
+50,Limerick,Female,Research,2017
+48,Limerick,Female,DataScientist,2018
+18,Limerick,Male,Administrator,2017
+35,Galway,Female,Administrator,2017
+35,Galway,Male,DataScientist,2017
+41,Galway,Female,Research,2017
+43,Galway,Female,Administrator,2017
+28,Galway,Male,DataScientist,2016
+43,Galway,Female,Doctors,2016
+22,Galway,Male,DataScientist,2016
+26,Galway,Female,IT Engineer,2018
+45,Galway,Male,IT Engineer,2017
+31,Galway,Male,Doctors,2016
+21,Galway,Male,Doctors,2017
+35,Galway,Male,Doctors,2018
+39,Galway,Female,IT Engineer,2018
+44,Galway,Female,Administrator,2018
+49,Others,Male,DataScientist,2017
+29,Others,Male,IT Engineer,2017
+26,Others,Female,IT Engineer,2016
+49,Others,Female,Administrator,2016
+20,Others,Female,IT Engineer,2018
+27,Others,Female,IT Engineer,2017
+19,Others,Male,DataScientist,2018
+46,Others,Female,Administrator,2016
+47,Others,Male,Research,2016
+41,Others,Male,IT Engineer,2018
+37,Others,Male,Doctors,2018
+22,Others,Male,Research,2017
+45,Others,Male,DataScientist,2018
