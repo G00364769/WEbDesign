@@ -52,7 +52,7 @@
 	-->
 	<form class="d1" id="myForm">
 		<label>  Year: </label>
-			<Select name="Year" required id="dProvince" required>
+			<Select name="Year" required id="Year" required>
 				<option Selected= "selected"> </option>
 				<option> 2017 </option>
 				<option> 2018 </option>
@@ -60,7 +60,7 @@
 				<option> 2020 </option>
 			</Select> <br> <br>
 		<label> Job Type : </label>
-			<Select name="JobType" required id="vType"required>
+			<Select name="JobType" required id="JobType"required>
 				<option Selected= "selected"> </option>
 				<option> Doctor </option>
 				<option> IT Engineer </option>
@@ -78,7 +78,7 @@
 				<option> Female</option>
 			</Select> <br> <br>
 		<label> Location : </label> 
-		<Select name="Age" required id="mYear"required >
+		<Select name="Age" required id="Location"required >
 				<option Selected= "selected"> </option>
 				<option> Dublin  </option>
 				<option> Cork </option>
@@ -88,7 +88,7 @@
 				<option> Others  </option>
 			</Select> <br> <br>
 			
-			<button onclick="Saverecord()" > Save  </button> 
+			<button onclick="WriteToFile(this.form)" > Save  </button> 
 			<button onclick="Clearrecord()"> Clear  </button> 
 			
 
@@ -100,44 +100,31 @@
 </div>
 </body>
 <script>
-	<!-- save record -->
 	
-	function Saverecord() { 
-	        	           	
-	        var csvData = new Array();  // To collect the names
-            // Collecting the names
-            csvData[0] = document.getElementById('dProvince').value;
-            csvData[1] = document.getElementById('vType').value;
-            csvData[2] = document.getElementById('dAge').value;
-			csvData[3] = document.getElementById('dSex').value;
-			csvData[4] = document.getElementById('mYear').value;
-			
-            
-			var  path = document.location.pathname
-			alert(location.pathname)
-			 alert(location.href.split('/')[ location.href.split('/').length - 1 ]);
-			
-			var csvString = csvData.join(',');
-			
-			var csvWin = window.open("","","");
-			csvWin.document.write('<meta name="content-type" content="text/csv">');
-			csvWin.document.write('<meta name="content-disposition" content="attachment;  filename=data.csv">  ');
-			csvWin.document.write(csvString);
-            
-			
-			alert("Data Added Successfully");
-			
-        }
 	function Clearrecord() {
 	    
-			document.getElementById('dProvince').value="";
-            document.getElementById('vType').value="";
+			document.getElementById('Year').value="";
+            document.getElementById('JobType').value="";
             document.getElementById('dAge').value="";
 			document.getElementById('dSex').value="";
-			document.getElementById('mYear').value="";
+			document.getElementById('Location').value="";
 			alert("Data Deleted Successfully");
 		}
-	     
+    function WriteToFile(passForm) {
+	
+	  var ForAppending = 8
+      var fso = new ActiveXObject("Scripting.FileSystemObject");
+      var fileLoc = "C:\\Project web\\sample.csv";
+      var file = fso.OpenTextFile(fileLoc,8);
+      file.writeline(passForm.dAge.value + ',' +
+                     passForm.Location.value+ ',' +
+					 passForm.dSex.value+ ',' +
+					 passForm.JobType.value+ ',' +
+					 passForm.Year.value);
+      file.Close();
+      alert('File created successfully at location: ' + fileLoc);
+     }
+	
 </script>
 
 
