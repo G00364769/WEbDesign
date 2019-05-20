@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Author : Somu  Date: April 2019-->
+<!-- Cource : Web Application Development -->
+<!--  WEBSITE DEVELOPMENT ASSIGNMENT  -->
+
+<head>
+	<!-- Style Setting and relative positioning of the User Name and Password input boxes 
+	     Keep the Screen name as "Login Screen"
+		 Create a CSS class and set the style of the website
+	-->
+	<title> Login Screen </title>
+	<style>
+	.d1 {   
+			position: relative;
+	    	background-color: lightgreen;
+			border: 6px solid Yellow;
+			padding: 30px;
+			font-family: "Lucida Console", Monaco, monospace;
+		}
+	label {
+	        font-weight: bold;
+			display: inline-block;
+			float: left;
+			clear: left;
+			width: 250px;
+			text-align: right;
+			
+			}
+	input {
+			display: inline-block;
+			float: left;
+			}	
+	button {
+	        font-weight: bold;
+			position: relative;
+			bottom: 1px;
+			left: 10%;
+			}
+			
+	</style>
+</head>
+
+<body>
+<div class="d1">
+<h1 align="center"> Add New Entry for job details </h1>
+</div>
+	<!-- <form  Use the sytle sheet "d1"
+				Login name is email address
+				Password should be atleast 5 character long
+				Call functions ValidateUserpwd and forgotPassword functions to validate the input
+	-->
+	<form class="d1" id="myForm" >
+		<label>  Year: </label>
+			<Select name="Year" required id="Year" required>
+				<option Selected= "selected"> </option>
+				<option> 2017 </option>
+				<option> 2018 </option>
+				<option> 2019 </option>
+				<option> 2020 </option>
+			</Select> <br> <br>
+		<label> Job Type : </label>
+			<Select name="JobType" required id="JobType"required>
+				<option Selected= "selected"> </option>
+				<option> Doctor </option>
+				<option> IT Engineer </option>
+				<option> DataScientist </option>
+				<option> Research </option>
+				<option> Administrator </option>
+			</Select> <br> <br>
+		<label> Person Age : </label>
+			
+			(between 16 to 50)<input type="number" placeholder=" Age" id="dAge" min="16" max="50"maxlength="2"  required >   <br><br>	
+			 
+		<label>  Sex : </label>
+			<Select name="driverSex" required id="dSex" required>
+				<option Selected= "selected"></option>
+				<option> Male</option>
+				<option> Female</option>
+			</Select> <br> <br>
+		<label> Location : </label> 
+		<Select name="Age" required id="Location"required >
+				<option Selected= "selected"> </option>
+				<option> Dublin  </option>
+				<option> Cork </option>
+				<option> Leinster  </option>
+				<option> Limerick   </option>
+				<option> Galway  </option>
+				<option> Others  </option>
+			</Select> <br> <br>
+			
+			
+			<input type = "submit"disabled>
+			<!--<input type = "submit"value="Submit"onclick="WriteToFile(this.form)">-->
+			<button onclick="WriteToFile(this.form)" > Save  </button> 
+			
+			<button onclick="Clearrecord()"> Clear  </button> 
+			
+
+	
+	</form>
+<div class="d1">
+<h5> Developed By : Adarsha sachan <br>
+	 Year  : 2019</h5>
+</div>
+</body>
+<script>
+	
+	function Clearrecord() {
+	    
+			document.getElementById('Year').value="";
+            document.getElementById('JobType').value="";
+            document.getElementById('dAge').value="";
+			document.getElementById('dSex').value="";
+			document.getElementById('Location').value="";
+			alert("Data Deleted Successfully");
+		}
+
+ 
+    function WriteToFile(passForm) 
+	{
+	 
+	  var ForAppending = 8
+	   
+      var fso = new ActiveXObject("Scripting.FileSystemObject");
+      var fileLoc = "C:\\Users\\adarsha\\Desktop\\webdesign\\Records.csv";
+      var file = fso.OpenTextFile(fileLoc,8);
+      file.writeline(passForm.dAge.value + ',' +
+                     passForm.Location.value+ ',' +
+					 passForm.dSex.value+ ',' +
+					 passForm.JobType.value+ ',' +
+					 passForm.Year.value);
+      file.Close();
+      alert('File created successfully at location: ' + fileLoc);
+     
+	 
+	 }
+	
+</script>
+
+
+</html>
