@@ -1,0 +1,37 @@
+<!Doctype html>
+<html lang="en">
+<head>
+ <meta chaeset="UTF-8">
+ <title>Document</title>
+ <script src ="https://d3js.org/d3.v5.min/js"></script>
+ </head>
+ <body>
+    <div id ="myDiv"></div>
+	
+</body>
+</html>
+<script>
+d3.csv("Records.csv").then(function(data)){
+   console.log(data);
+   
+   let svgContainer=d3.select("#myDiv").append("svg")
+   .attr("width",800)
+   .attr("higth",800);
+   
+   let myRecrangle = svgContainer.selectAll("rect")
+   .data(data);
+   
+   myRectangle.enter()
+   .append("rect")
+     .attr("x",function(d,i){
+	 return 50+(i*21);
+	 })
+	 .attr("y",50)
+	 .attr("width",20)
+	 .attr("height",function(d){
+	  return d.temp)
+	 .attr("fill","red")
+   
+   })
+</script>
+ 

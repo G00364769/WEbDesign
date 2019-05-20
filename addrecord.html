@@ -50,9 +50,9 @@
 				Password should be atleast 5 character long
 				Call functions ValidateUserpwd and forgotPassword functions to validate the input
 	-->
-	<form class="d1" id="myForm" >
+	<form class="d1" id="myForm">
 		<label>  Year: </label>
-			<Select name="Year" required id="Year" required>
+			<Select name="Year"  required id="Year" required>
 				<option Selected= "selected"> </option>
 				<option> 2017 </option>
 				<option> 2018 </option>
@@ -60,7 +60,7 @@
 				<option> 2020 </option>
 			</Select> <br> <br>
 		<label> Job Type : </label>
-			<Select name="JobType" required id="JobType"required>
+			<Select name="JobType"value="" required id="JobType"required>
 				<option Selected= "selected"> </option>
 				<option> Doctor </option>
 				<option> IT Engineer </option>
@@ -70,8 +70,7 @@
 			</Select> <br> <br>
 		<label> Person Age : </label>
 			
-			(between 16 to 50)<input type="number" placeholder=" Age" id="dAge" min="16" max="50"maxlength="2"  required >   <br><br>	
-			 
+			(between 16 to 50)<input type="number" placeholder=" Age" id="dAge" min="16" max="50"maxlength="2" required > <br><br> 
 		<label>  Sex : </label>
 			<Select name="driverSex" required id="dSex" required>
 				<option Selected= "selected"></option>
@@ -89,11 +88,7 @@
 				<option> Others  </option>
 			</Select> <br> <br>
 			
-			
-			<input type = "submit"disabled>
-			<!--<input type = "submit"value="Submit"onclick="WriteToFile(this.form)">-->
 			<button onclick="WriteToFile(this.form)" > Save  </button> 
-			
 			<button onclick="Clearrecord()"> Clear  </button> 
 			
 
@@ -105,7 +100,34 @@
 </div>
 </body>
 <script>
+	<!-- save record -->
 	
+	function Saverecord() { 
+	        	           	
+	        var csvData = new Array();  // To collect the names
+            // Collecting the names
+            csvData[0] = document.getElementById('Year').value;
+            csvData[1] = document.getElementById('JobType').value;
+            csvData[2] = document.getElementById('dAge').value;
+			csvData[3] = document.getElementById('dSex').value;
+			csvData[4] = document.getElementById('Location').value;
+			
+            
+			var  path = document.location.pathname
+			alert(location.pathname)
+			 alert(location.href.split('/')[ location.href.split('/').length - 1 ]);
+			
+			var csvString = csvData.join(',');
+			
+			var csvWin = window.open("","","");
+			csvWin.document.write('<meta name="content-type" content="text/csv">');
+			csvWin.document.write('<meta name="content-disposition" content="attachment;  filename=data.csv">  ');
+			csvWin.document.write(csvString);
+            
+			
+			alert("Data Added Successfully");
+			
+        }
 	function Clearrecord() {
 	    
 			document.getElementById('Year').value="";
@@ -115,26 +137,35 @@
 			document.getElementById('Location').value="";
 			alert("Data Deleted Successfully");
 		}
-
- 
-    function WriteToFile(passForm) 
-	{
+    function WriteToFile(passForm) {
+	 if (document.getElementById('Year').value.length== 0||document.getElementById('JobType').value.length== 0
+	 ||document.getElementById('dAge').value.length== 0||document.getElementById('dSex').value.length== 0
+	 ||document.getElementById('Location').value.length== 0)
+	 {
+		alert("Some fields are Blank");
+		return false;
+	 }
+	 else
+	 {
+	 alert("valid record");
 	 
 	  var ForAppending = 8
-	   
       var fso = new ActiveXObject("Scripting.FileSystemObject");
-      var fileLoc = "C:\\Users\\adarsha\\Desktop\\webdesign\\Records.csv";
+      var fileLoc = "C:\\Project web\\sample.csv";
       var file = fso.OpenTextFile(fileLoc,8);
       file.writeline(passForm.dAge.value + ',' +
                      passForm.Location.value+ ',' +
 					 passForm.dSex.value+ ',' +
 					 passForm.JobType.value+ ',' +
-					 passForm.Year.value);
+					 passForm.Location.value);
       file.Close();
       alert('File created successfully at location: ' + fileLoc);
-     
-	 
+     }
 	 }
+	 
+
+
+
 	
 </script>
 
