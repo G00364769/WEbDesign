@@ -1,0 +1,61 @@
+<DOCTYPE.html>
+<html>
+<head>
+<title>DOM </title>
+		<style>
+			.d1 {
+					position: relative;
+					background-color: red;
+					border: 6px solid yellow;
+					padding: 30px;
+					<!--font-family  -->
+					font-family: "Lucida Console", Monaco, monospace;
+			    }
+				<!--Center Images-->
+		</style>
+</head>
+		<body bgcolor="#E6E6FA">
+				<form class="d1" id="myForm" >
+					<a href=".\Login.html"><img src =".\homeButton.jpg"width="200"title= "Login Page" ></a>
+					<h1 id ="colour"> </h1>
+					<button onclick ="mycolur()" button type="Button" style="background-color: yellow; height: 35px; width: 150px"> <b> Add Entry </button> 
+					<button onclick ="arraygraph()" button type="Button" style="background-color: Lightred; height: 35px; width: 150px"> <b> Array Graph </button> 
+					<button onclick ="Bargraph()" button type="Button" style="background-color: Lightgreen; height: 35px; width: 150px"> <b> Bar Graph </button>
+					<button onclick ="d3Bargraph()" button type="Button" style="background-color: Lightyellow; height: 35px; width: 150px"> <b> D3 Bar Graph </button>					
+				</form>
+		</body>
+		
+			<body id="bdy">
+				<button onclick ="changebackground()" button type="Button" style="background-color: pink; height: 35px; width: 150px"> <b>Change Background</button> 
+			</body>
+
+			
+<script>
+function changebackground(){
+document.getElementById("bdy").style.background="gray"
+}
+</script>
+<script>
+
+function mycolur(){
+
+window.location.href = "addrecord.html";
+}
+
+function arraygraph(){
+
+window.location.href = "Array.html";
+}
+
+function Bargraph(){
+
+window.location.href = "bar.html";
+}
+
+function d3Bargraph(){
+
+window.location.href = "d3.html";
+}
+
+</script>
+</html>

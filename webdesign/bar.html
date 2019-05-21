@@ -1,0 +1,119 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<title>BAR Graph </title>
+	<style>
+		rect:hover {fill: red;}
+	</style>
+ <meta chaeset="UTF-8">
+ <title>Document</title>
+  <script src ="https://d3js.org/d3.v5.min.js"></script>
+ </head>
+ <body>
+	Select chart Size:
+    <select id ="charthight">
+	<option value="90">90 Pixels</option>
+	<option value="100">100 Pixels</option>
+	<option value="120">120 Pixels</option>
+	
+	</select>
+	Select Chart color: <input type="color" id="colorpicker">
+	<button onclick="drawchart()">Draw Chart </button>
+    <div id ="myDiv"></div>
+	
+</body>
+	<body>
+		<button onclick ="Addrecord()" button type="Button" style="background-color: pink; height: 35px; width: 150px"> <b>MainPage</button> 
+	</body>
+</html>
+<script>
+
+function drawchart(){
+	d3.csv("Records.csv").then(function(data){
+	   console.log(data);
+	   
+	   // vlues for bar chart
+	   var height =document.getElementById("charthight").value;
+	   var width = 100;
+	   var dataCount=data.length;
+	   var gap =8;
+	   var chartcolor =document.getElementById("colorpicker").value;
+	   var test= Location;
+	   
+	   //convert to number
+	   data.forEach (function (d){
+		d.Age=Number(d.Age);
+		})
+	   // create scale of Y
+	   var yScale=d3.scaleLinear()
+			.domain([0,d3.max(data,function(d){
+				return d.Age;
+			})])
+			.range ([height,0]);
+			
+		// create scale of x
+		var xScale=d3.scaleBand()
+		.domain (data.map(function (d){
+			return d.Year;
+		
+		}))
+		.range([0,width]);
+			
+		// create y axis
+		var yAxis=d3.axisLeft()
+			.scale(yScale);
+			
+		// Create x axis
+		
+		var xAxis=d3.axisBottom()
+			.scale(xScale);
+			
+		d3.select("#myDiv").selectAll("*").remove();
+	   // create svg container
+	   let svgContainer=d3.select("#myDiv").append("svg")
+	   .attr("width",4000)
+	   .attr("higth",4000);
+	   
+	   let myRecrangle = svgContainer.selectAll("rect")
+	   .data(data);
+	   // create rectangle
+		myRecrangle.enter()
+			.append("rect")
+			// start transition
+				.attr("x",function(d,i){
+					return 47+(i*width/dataCount);
+				})
+
+				.attr("y",function (d,i){
+					return yScale(d.Age);
+				})
+				.attr("width",(width/dataCount - gap))
+				.attr("height",function(d){
+					return height-yScale(d.Age);
+				})
+				.attr("fill",chartcolor);
+			 
+	svgContainer.append("g")
+		.attr("transform","translate(44,0)")
+		.call(yAxis);
+		
+	svgContainer.append("g")
+		.attr("transform","translate(45,"+height+")")
+		.call(xAxis)
+		.selectAll("text")
+			.attr("transform", "rotate(60)")
+			.attr("text-anchor","start")
+			.attr("x","9")
+			.attr("y","1");
+		
+			 
+			 });
+			 
+	
+}
+
+function Addrecord(){
+	window.location.href = "addbutton.html";
+}		 
+  
+</script>
