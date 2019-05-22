@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 
-<!-- Cource : Web Application Development -->
-
+<!--   ASSIGNMENT  -->
 
 <head>
-	<!--Create a CSS class and set the style of the website
+	<!-- Style Setting 
+		 Create a CSS class and set the style of the website
 	-->
-	<title> Add Record </title>
+	<title> Login Screen </title>
 	<style>
 	.d1 {   
 			position: relative;
@@ -38,15 +38,15 @@
 			
 	</style>
 </head>
-
+<body > 
+	<button onclick ="Addrecord()" button type="Button" style="background-color: pink; height: 35px; width: 100px"> <b>MainPage</button> 
+</body>
 <body>
 <div class="d1">
-<h1 align="center"> Add New Entry in csv record </h1>
+<h1 align="center"> Add New Entry in CSV File </h1>
 </div>
 	<!-- <form  Use the sytle sheet "d1"
-				Login name is email address
-				Password should be atleast 5 character long
-				Call functions ValidateUserpwd and forgotPassword functions to validate the input
+				
 	-->
 	<form class="d1" id="myForm">
 		<label>  Year: </label>
@@ -97,12 +97,10 @@
 	 Year  : 2019</h5>
 </div>
 </body>
-		<body class="d1">
-			<h2 align="center"> </h1>
-			<button onclick ="Addrecord()" style="background-color: green; height: 35px; width: 150px"> <b>MainPage</button> 
-		</body>
+		
 <script>
 	<!-- save record -->
+	
 
 	function Clearrecord() {
 	    
@@ -115,7 +113,7 @@
 		}
     function WriteToFile(passForm) {
 	 if (document.getElementById('Year').value.length== 0||document.getElementById('JobType').value.length== 0
-	 ||document.getElementById('dAge').value==0||document.getElementById('dSex').value.length== 0
+	 ||(!document.getElementById("dAge").checkValidity())||document.getElementById('dSex').value.length== 0
 	 ||document.getElementById('Location').value.length== 0)
 	 {
 		alert("Some fields are Blank");
@@ -136,15 +134,13 @@
 					 passForm.Year.value);
       file.Close();
       alert('File created successfully at location: ' + fileLoc);
-	  window.location.href = "http://localhost:8000/";
+	  window.location.href = "localhost:8000"
      }
-	 
 	 }
 	 
-function Addrecord(){
+	function Addrecord(){
 	window.location.href = "addbutton.html";
-}		 
-  	
+}	
 </script>
 
 
