@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Array Graph </title>
-	
+	<title>Array Graph </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<h1>Graph for array value</h1>
 	<div id="Array"></div>
-	<button onclick ="Addrecord()" button type="Button" style="background-color: pink; height: 35px; width: 150px"> <b>MainPage</button> 
+	<i class="fa fa-home" style="font-size:48px;color:red"></i>
+	<button onclick ="Addrecord()" button type="Button" <i class="fa fa-home"></i> <b>MainPage</button> 
 </body>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -19,6 +21,7 @@ google.charts.setOnLoadCallback(drawChart);
 
 // Draw the chart and set the chart values
 function drawChart() {
+// aray value for job and salary per day
   var data = google.visualization.arrayToDataTable([
   ['JOB', 'Salary per Day'],
   ['Administrator', 48],

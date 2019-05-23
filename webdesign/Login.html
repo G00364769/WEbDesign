@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html>
-
 <head>
          
 		<title> Login Screen </title>
@@ -31,51 +30,47 @@
 					<input type="email"  placeholder="Type your email" id="userName" required size="35"/> <br> <br />
 					<b>Password: </b> 
 					<input type="password" placeholder="Type Password" id="Password" maxlength="4" size="25"/>  <br> <br/>
-					
 					<button onclick ="check()" button type="Button" style="background-color: yellow; height: 30px; width: 100px"> <b> Submit </button>  <b> 
-					
 					<button onclick="forgotPassword()"> Forgot Password </button>
-					
-					
-					
+				
 			</form>
  
     </body>
 <script>
 <!--  validate email id -->
-function check()
-{
-  if(!document.getElementById("userName").checkValidity())
-  {
-    //do stuff here ie. show errors
-    alert("email not valid!");
-  }else
-  {
-      validatepwd();
-  }
-}
-// validate id and password
-function validatepwd() {
- if((document.getElementById("userName").value != "") && (document.getElementById("Password").value =="test"))
-  {
-	alert("login Successfully");
-	window.location.href = "addbutton.html";
-  }
-  else 
+	function check()
 	{
-		alert("Enter valid Password or click to forgot password");
+	  if(!document.getElementById("userName").checkValidity())
+	  {
+		//do stuff here ie. show errors
+		alert("Email not valid Please type Correct Email Address!");
+	  }else
+	  {
+		  validatepwd();
+	  }
 	}
-}	
-<!-- Show the default password-->
-function forgotPassword() {
-	if((document.getElementById("Password").value != "") && (document.getElementById("Password").value !="test"))
-		{
-		  alert("Enter the correct password. The temporary password is 'test' ");
-		}
-		else 
+// validate id and password
+		function validatepwd() {
+		 if((document.getElementById("userName").value != "") && (document.getElementById("Password").value =="test"))
+		  {
+			alert("login Successfully");
+			window.location.href = "addbutton.html";
+		  }
+		  else 
 			{
-				alert("The temporary password is 'test' ");
+				alert("Enter valid Password or click to forgot password");
 			}
-}	
+		}	
+<!-- Show the default password-->
+	function forgotPassword() {
+		if((document.getElementById("Password").value != "") && (document.getElementById("Password").value !="test"))
+			{
+			  alert("Enter the correct password. The temporary password is 'test' ");
+			}
+			else 
+				{
+					alert("The temporary password is 'test' ");
+				}
+	}	
 </script>
 </html>

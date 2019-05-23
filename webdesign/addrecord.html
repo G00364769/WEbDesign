@@ -1,102 +1,102 @@
 <!DOCTYPE HTML>
 <html>
-
-<!--   ASSIGNMENT  -->
-
 <head>
 	<!-- Style Setting 
 		 Create a CSS class and set the style of the website
 	-->
-	<title> Login Screen </title>
+	<title> Add Record Screen </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
-	.d1 {   
-			position: relative;
-	    	background-color: lightgreen;
-			border: 6px solid Yellow;
-			padding: 30px;
-			font-family: "Lucida Console", Monaco, monospace;
-		}
-	label {
-	        font-weight: bold;
-			display: inline-block;
-			float: left;
-			clear: left;
-			width: 250px;
-			text-align: right;
-			
+		.d1 {   
+				position: relative;
+				background-color: lightgreen;
+				border: 6px solid Yellow;
+				padding: 30px;
+				font-family: "Lucida Console", Monaco, monospace;
 			}
-	input {
-			display: inline-block;
-			float: left;
-			}	
-	button {
-	        font-weight: bold;
-			position: relative;
-			bottom: 1px;
-			left: 10%;
-			}
+		label {
+				font-weight: bold;
+				display: inline-block;
+				float: left;
+				clear: left;
+				width: 250px;
+				text-align: right;
+				
+				}
+		input {
+				display: inline-block;
+				float: left;
+				}	
+		button {
+				font-weight: bold;
+				position: relative;
+				bottom: 1px;
+				left: 10%;
+				}
 			
 	</style>
 </head>
 <body > 
-	<button onclick ="Addrecord()" button type="Button" style="background-color: pink; height: 35px; width: 100px"> <b>MainPage</button> 
-</body>
-<body>
-<div class="d1">
-<h1 align="center"> Add New Entry in CSV File </h1>
-</div>
-	<!-- <form  Use the sytle sheet "d1"
-				
-	-->
-	<form class="d1" id="myForm">
-		<label>  Year: </label>
-			<Select name="Year"  required id="Year" required>
-				<option Selected= "selected"> </option>
-				<option> 2017 </option>
-				<option> 2018 </option>
-				<option> 2019 </option>
-				<option> 2020 </option>
-			</Select> <br> <br>
-		<label> Job Type : </label>
-			<Select name="JobType"value="" required id="JobType"required>
-				<option Selected= "selected"> </option>
-				<option> Doctor </option>
-				<option> IT Engineer </option>
-				<option> DataScientist </option>
-				<option> Research </option>
-				<option> Administrator </option>
-			</Select> <br> <br>
-		<label> Person Age : </label>
-			
-			(between 16 to 50)<input type="number" placeholder=" Age" id="dAge" min="16" max="50"maxlength="2" required > <br><br> 
-		<label>  Sex : </label>
-			<Select name="driverSex" required id="dSex" required>
-				<option Selected= "selected"></option>
-				<option> Male</option>
-				<option> Female</option>
-			</Select> <br> <br>
-		<label> Location : </label> 
-		<Select name="Age" required id="Location"required >
-				<option Selected= "selected"> </option>
-				<option> Dublin  </option>
-				<option> Cork </option>
-				<option> Leinster  </option>
-				<option> Limerick   </option>
-				<option> Galway  </option>
-				<option> Others  </option>
-			</Select> <br> <br>
-			
-			<button onclick="WriteToFile(this.form)" > Save  </button> 
-			<button onclick="Clearrecord()"> Clear  </button> 
-			
-
 	
-	</form>
-<div class="d1">
-<h5> Developed By : Adarsha sachan <br>
-	 Year  : 2019</h5>
-</div>
+	<button onclick ="Addrecord()" style="font-size:38px;color:green"<i class="fa fa-home"></i> <b>Main Page</button> 
+	
 </body>
+		<body>
+		<div class="d1">
+		<h1 align="center"> Add New Entry in CSV File </h1>
+		</div>
+			<!-- <form  Use the sytle sheet "d1"
+						
+			-->
+					<form class="d1" id="myForm">
+							<label>  Year: </label>
+								<Select name="Year"  required id="Year" required>
+										<option Selected= "selected"> </option>
+										<option> 2017 </option>
+										<option> 2018 </option>
+										<option> 2019 </option>
+										<option> 2020 </option>
+								</Select> <br> <br>
+							<label> Job Type : </label>
+								<Select name="JobType"value="" required id="JobType"required>
+									<option Selected= "selected"> </option>
+									<option> Doctor </option>
+									<option> IT Engineer </option>
+									<option> DataScientist </option>
+									<option> Research </option>
+									<option> Administrator </option>
+								</Select> <br> <br>
+						<label> Person Age : </label>
+								(between 16 to 50)<input type="number" placeholder=" Age" id="dAge" min="16" max="50"maxlength="2" required > <br><br> 
+							<label>  Sex : </label>
+									<Select name="driverSex" required id="dSex" required>
+										<option Selected= "selected"></option>
+										<option> Male</option>
+										<option> Female</option>
+									</Select> <br> <br>
+						<label> Location : </label> 
+						<Select name="Age" required id="Location"required >
+								<option Selected= "selected"> </option>
+								<option> Dublin  </option>
+								<option> Cork </option>
+								<option> Leinster  </option>
+								<option> Limerick   </option>
+								<option> Galway  </option>
+								<option> Others  </option>
+							</Select> <br> <br>
+							
+							<button onclick="WriteToFile(this.form)" > Save  </button> 
+							<button onclick="Clearrecord()"> Clear  </button> 
+							
+
+					
+					</form>
+			<div class="d1">
+				<h5> Developed By : Adarsha sachan <br>
+					 Year  : 2019</h5>
+			</div>
+		</body>
 		
 <script>
 	<!-- save record -->
@@ -111,32 +111,33 @@
 			document.getElementById('Location').value="";
 			alert("Data Deleted Successfully");
 		}
-    function WriteToFile(passForm) {
-	 if (document.getElementById('Year').value.length== 0||document.getElementById('JobType').value.length== 0
-	 ||(!document.getElementById("dAge").checkValidity())||document.getElementById('dSex').value.length== 0
-	 ||document.getElementById('Location').value.length== 0)
-	 {
-		alert("Some fields are Blank");
-		return false;
-	 }
-	 else
-	 {
-	 alert("valid record");
-	 
-	  var ForAppending = 8
-      var fso = new ActiveXObject("Scripting.FileSystemObject");
-      var fileLoc = "C:\\Users\\adarsha\\Desktop\\webdesign\\Records.csv";
-      var file = fso.OpenTextFile(fileLoc,8);
-      file.writeline(passForm.dAge.value + ',' +
-                     passForm.Location.value+ ',' +
-					 passForm.dSex.value+ ',' +
-					 passForm.JobType.value+ ',' +
-					 passForm.Year.value);
-      file.Close();
-      alert('File created successfully at location: ' + fileLoc);
-	  window.location.href = "localhost:8000"
-     }
-	 }
+		function WriteToFile(passForm) {
+			 if (document.getElementById('Year').value.length== 0||document.getElementById('JobType').value.length== 0
+			 ||(!document.getElementById("dAge").checkValidity())||document.getElementById('dSex').value.length== 0
+			 ||document.getElementById('Location').value.length== 0)
+		 {
+			alert("Some fields are Blank");
+			return false;
+		 }
+		 else
+		 {
+		 alert("valid record");
+		 
+		  var ForAppending = 8
+		  var fso = new ActiveXObject("Scripting.FileSystemObject");
+		  var fileLoc = "C:\\Users\\adarsha\\Desktop\\webdesign\\Records.csv";
+		  var file = fso.OpenTextFile(fileLoc,8);
+		  file.writeline(passForm.dAge.value + ',' +
+						 passForm.Location.value+ ',' +
+						 passForm.dSex.value+ ',' +
+						 passForm.JobType.value+ ',' +
+						 passForm.Year.value);
+		  file.Close();
+		  alert('File created successfully at location: ' + fileLoc);
+		  alert('Now you will on bar Graph page make sure webservice is running');
+		  window.location.href = "localhost:8000";
+		 }
+		 }
 	 
 	function Addrecord(){
 	window.location.href = "addbutton.html";
