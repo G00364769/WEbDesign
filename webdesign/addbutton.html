@@ -21,23 +21,29 @@
 						<a href=".\Login.html"><img src =".\homeButton.jpg"width="200"title= "Login Page" ></a>
 						<h1 id ="colour"> </h1>
 						<button onclick ="mycolur()" button type="Button" style="background-color: yellow; height: 35px; width: 150px"> <b> Add Entry <i
-						class="fa fa-address-book"></i></button>
-						<button onclick ="arraygraph()" button type="Button" style="background-color: Lightred; height: 35px; width: 150px"> Array Graph
+						class="fa fa-address-book" style="font-size:24px"></i></button>
+						
+						<button onclick ="arraygraph()" button type="Button" style="background-color: Lightred; height: 35px; width: 150px"> Pie chart
 						<i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></button>
 						
+						<button onclick ="Circlegraph()" button type="Button" style="background-color:red; height: 35px; width: 150px" >  Circle Graph
+						<i class="fa fa-circle" style="font-size:24px"></i></button>
 						
 						
-						<button onclick ="Bargraph()" button type="Button" style="background-color: Lightgreen; height: 35px; width: 150px"> Bar Graph <i class="fa fa-bar-chart-o"></i></button>
+						<button onclick ="Bargraph()" button type="Button" style="background-color: Lightgreen; height: 35px; width: 150px"> Bar Graph <i class="fa fa-bar-chart-o"style="font-size:24px" ></i></button>
 
-						<button onclick ="d3Bargraph()" button type="Button" style="background-color: Lightyellow; height: 35px; width: 150px"> <b> D3 Bar Graph </button>					
+						<button onclick ="d3Bargraph()" button type="Button" style="background-color: Lightyellow; height: 35px; width: 150px"> <b> D3 Bar Graph <i class="fa fa-bar-chart-o"style="font-size:24px" ></i></button>
+						
+						
 				</form>
 				
 		</body>
 			<body id="bdy">
-				<button onclick ="changebackground()" button type="Button" style="background-color: pink; height: 35px; width: 150px"> <b>Change Background</button> 	
+				<button onclick ="changebackground()" button type="Button" style="background-color: pink; height: 37px; width: 150px"> <b>Change Background<i style="font-size:24px"></i></button>
 			</body>
 				<h5> Add Entry:   if user wants to add record in csv file</h5>
-				<h5> Array Graph: Create a graph for Array value</h5>
+				<h5> Pie chart: Create a graph for Array value</h5>
+				<h5> Circle Graph: Create a Circle for Array value</h5>
 				<h5> Bar Graph:   Create graph for csv records</h5>
 				<h5> D3 Bar Graph:Bar graph in D3 for csv records</h5>
 				<h5> Change Background: Change the background color of page</h5>
@@ -68,6 +74,13 @@
 
 			window.location.href = "d3.html";
 		}
+		
+		function Circlegraph(){
+
+			window.location.href = "circle.html";
+		}
+		
+		
 
 </script>
 </html>

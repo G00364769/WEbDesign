@@ -1,0 +1,46 @@
+<!Doctype html>
+<html lang="en">
+<head>
+		<meta charset ="UTF-8">
+		<title>Circle</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src ="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+	<i class="fa fa-home" style="font-size:48px;color:red"></i>
+	<button onclick ="Addrecord()" button type="Button" <i class="fa fa-home"></i> <b>Main Page</button> 
+</body>
+<body>
+	<div id ="Svg_area"></div>
+	
+</body>
+</html>
+<script>
+
+var myArray = [16,20,5,26,12];
+
+let svgContainer = d3.select("#Svg_area").append("svg")
+	.attr("width",900)
+	.attr("height",800);
+	
+let circles =svgContainer.selectAll("circle")
+	.data(myArray);
+
+
+circles.enter()
+	.append("circle")
+	.attr("cx",function (d,i){
+		return 75+(i*50);})
+	.attr("cy",50)
+	.attr("r",function(d){
+		return d;})
+	.attr("fill","lightgreen");
+
+
+function Addrecord(){
+	window.location.href = "addbutton.html";
+}
+
+</script>
